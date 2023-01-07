@@ -469,7 +469,7 @@ background-color: whitesmoke;
     opacity: 0.4;
     border: 1px solid #111111;
     z-index: 10;
-    visibility: hidden;
+    visibility: visible;
     border-radius: 86px;
   }
   [my-title] {
