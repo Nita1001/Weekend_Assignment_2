@@ -86,15 +86,25 @@ background-color: whitesmoke;
     li.logo span.logo-1::before{
       content:'';
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100px;
-      height: 100px;
-      border: solid pink;
+      top: 2rem;
+      left: 4.3rem;
+      width: 1px;
+      height: 1px;
+      background-color: pink;
+      z-index: 21;
+    }
+    li.logo span.logo-1::after{
+      content:'';
+      position: absolute;
+      top: 2rem;
+      right: 4.4rem;
+      width: 1px;
+      height: 1px;
+      background-color: pink;
       z-index: 21;
     }
 
-/* MENU */
+/* Burger MENU */
 .menu-wrap {
   position: fixed;
   top: 0;
