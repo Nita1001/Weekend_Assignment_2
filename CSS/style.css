@@ -8,8 +8,16 @@
   list-style: none;
 }
 
+:root {
+  --primary-color: rgba(13, 110, 139, 0.75);
+  --secondary-color: rgba(229, 148, 0 , 0.9);
+  --overlay-color: rgba(24, 39, 51 , 0.85);
+  --menu-speed: 0.75s;
+}
+
 body{
-background-color: whitesmoke;}
+background-color: whitesmoke;
+}
 
 .grid-container{
   display: grid;
@@ -185,8 +193,8 @@ background-color: whitesmoke;}
       font-size: 150%;
       position: absolute;
       padding: 1px 5px 2px 5px;
-      bottom: -0.4rem;
-      left: 104%;
+      bottom: 0.4rem;
+      right: 120%;
       box-shadow: 4px 4px 4px #ffffff;
       opacity: 0.4;
       border: 1px solid #111111;
@@ -197,6 +205,9 @@ background-color: whitesmoke;}
     [my-title] {
       position: relative;
     }
+
+    /* Logos Nav */
+
     div.navbar{
       display: flex;
       align-items: center;
@@ -205,24 +216,6 @@ background-color: whitesmoke;}
       position: fixed;
       border-radius: 1rem;
       grid-area: nav;
-    }
-    
-    .navbar nav ul a{
-      color: white;
-      padding: 10px 28px 0px 0;
-      margin: 0 8px;
-      font-size: 1.8rem;
-      -o-transition-delay: 2s;
-    }
-    .navbar ul{
-      display: flex;
-      justify-content: space-between;
-      align-items:flex-end;
-      min-width: 38rem; 
-    }
-    .navbar nav ul a:hover{
-      font-size: 2.6rem;
-      opacity: 1;
     }
     
     /* ------ --- [ Logo ] --- ----- */
@@ -241,47 +234,146 @@ background-color: whitesmoke;}
     }
 }
 
-
-/* Nav */
-div.navbar{
-  /* display: flex;
-  align-items: center;
-  justify-content: space-around; */
-  background-color: rgba(25, 25, 25, 0.1);
+/* MENU */
+.menu-wrap {
   position: fixed;
-  border-radius: 1rem;
-  grid-area: nav;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 
-.navbar nav ul a{
-  color: white;
-  padding: 10px 28px 0px 0;
-  margin: 0 8px;
-  font-size: 1.8rem;
-  -o-transition-delay: 2s;
-}
-.navbar ul{
-  /* display: flex;
-  justify-content: space-between;
-  align-items:flex-end; */
-  min-width: 38rem; 
-}
-.navbar nav ul a:hover{
-  font-size: 2.6rem;
-  opacity: 1;
+.menu-wrap .toggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
 }
 
-/* ------ --- [ Logo ] --- ----- */
-/* ------------------------------ */
-a.logo{
+.menu-wrap .burger {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+  padding: 1rem;
+  background: var(--primary-color);
   display: flex;
   align-items: center;
-  justify-content: left;
-  font-size: 2.1875rem;
-  color: #fff;
-  z-index: 20;
+  justify-content: center;
 }
-a.logo img{
-  width: 20%;
-  height: 20%;
+
+/* Hamburger Line */
+.menu-wrap .burger > div {
+  position: relative;
+  flex: none;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+
+/* burger Lines - Top & Bottom */
+.menu-wrap .burger > div::before,
+.menu-wrap .burger > div::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  width: 100%;
+  height: 2px;
+  background: inherit;
+}
+/* Move Line Down */
+.menu-wrap .burger > div::after {
+  top: 10px;
+}
+
+/* Toggle Animation */
+.menu-wrap .toggle:checked + .burger > div {
+  transform: rotate(135deg);
+}
+
+/* Turns Lines Into X */
+.menu-wrap .toggle:checked + .burger > div:before,
+.menu-wrap .toggle:checked + .burger > div:after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+/* Rotate On Hover When Checked */
+.menu-wrap .toggle:checked:hover + .burger > div {
+  transform: rotate(225deg);
+}
+
+/* Show Menu */
+.menu-wrap .toggle:checked ~ .menu {
+  visibility: visible;
+}
+.menu-wrap .toggle:checked ~ .menu > div {
+  transform: scale(1);
+  transition-duration: var(--menu-speed);
+}
+
+.menu-wrap .toggle:checked ~ .menu > div > div {
+  opacity: 1;
+  transition:  opacity 0.4s ease 0.4s;
+}
+
+.menu-wrap .menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-wrap .menu > div {
+  background: var(--overlay-color);
+  border-radius: 50%;
+  width: 200vw;
+  height: 200vw;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+  transition: all 0.4s ease;
+}
+
+.menu-wrap .menu > div > div {
+  text-align: center;
+  max-width: 90vw;
+  max-height: 100vh;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.menu-wrap .menu > div > div > ul > li {
+  list-style: none;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.menu-wrap .menu > div > div > ul > li > a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.4s ease;
+}
+
+.menu-wrap .menu > div > div > ul > li > a:hover {
+  color: var(--secondary-color);
 }
