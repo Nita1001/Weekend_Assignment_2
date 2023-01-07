@@ -1,4 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Paytone+One&display=swap');
 
+*{
+  font-family: 'Mochiy Pop One','PayTone One' ,sans-serif;
+  font-size: 62.5%;
+}
 
 .grid-container{
   display: grid;
@@ -32,10 +37,12 @@
 .item_2{
   background: #0a0e0b;
   grid-area: content;
+  color: #ccc;
 }
 .item_3{
   background: #9fcab7;
   grid-area: sidebar;
+  font-size: 12rem;
 }
 
 .item_4{
@@ -71,4 +78,102 @@
     ' content content content sidebar'
     'footer footer footer footer';
   }
+
+  /* Spooky Ghost */
+  .ghost {
+    cursor: grab;
+    position: absolute;
+    width: 70px;
+    height: 50px;
+    background: #e1e1e1;
+    transform: translateY(-15px);
+    border-radius: 70px 70px 0 0;
+    animation: float 4s linear infinite;
+    left: 140px;
+    top: 500px;
+    z-index: 10;
+    }
+  
+    @keyframes float {
+    40% {
+        transform: translateY(16px);
+    }
+    60% {
+      transform: translateX(8px);
+  }
+    }
+  
+    .ghost .head {
+    width: 60px;
+    position: absolute;
+    top: 40%;
+    left: calc(50% - 30%);
+    right: 2px;
+    }
+    .ghost .eyes {
+    height: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 12px;
+    }
+    .ghost .eyes span {
+    width: 14px;
+    height: 8px;
+    background: #000000;
+    border-radius: 100%;
+    transition: .3s;
+    }
+  
+    .ghost:hover .eyes span {
+    width: 12px;
+    height: 18px;
+    border-radius: 100%;
+    }
+  
+    .ghost .bottom {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    bottom: -20px;
+    }
+    .ghost .bottom span {
+    flex: 1;
+    height: 28px;
+    background: #e1e1e1;
+    border-radius: 0 0 12px 26px;
+    }
+  
+    .ghost .bottom span:first-child {
+    border-radius: 0 0 12px 26px;
+    }
+  
+    .ghost .bottom span:last-child {
+    border-radius: 0 0 12px 26px;
+    }
+    [my-title]:hover:after {
+      opacity: 1;
+      transition: all 0.3s ease-out;
+      visibility: visible;
+    }
+    [my-title]:after {
+      content: attr(my-title);
+      background-color: #000000;
+      color: rgb(255, 255, 255);
+      font-size: 150%;
+      position: absolute;
+      padding: 1px 5px 2px 5px;
+      bottom: -0.4rem;
+      left: 104%;
+      box-shadow: 4px 4px 4px #ffffff;
+      opacity: 0.4;
+      border: 1px solid #111111;
+      z-index: 10;
+      visibility: hidden;
+      border-radius: 86px;
+    }
+    [my-title] {
+      position: relative;
+    }
+
 }
