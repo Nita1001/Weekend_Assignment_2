@@ -18,7 +18,7 @@
 body{
 background-color: whitesmoke;
 }
-
+/* Mobile First */
 .grid-container{
   display: grid;
   gap: 1rem; 
@@ -28,10 +28,10 @@ background-color: whitesmoke;
   grid-template-areas: 
   'header'
   'sidebar'
+  'sidebar'
+  'sidebar'
   'content'
-  'content'
-  'content'
-  'footer'
+  'footer';
 }
 
 /* Tablet */
@@ -60,22 +60,9 @@ background-color: whitesmoke;
     'content content content sidebar'
     'content content content sidebar'
     'content content content sidebar'
-    'content content content sidebar'
     'footer footer footer footer';
   }
-    /* Logos Nav */
-
-    /* div.navbar{
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-around;
-      background-color: rgba(25, 25, 25, 0.1);
-      position: fixed;
-      border-radius: 1rem;
-      grid-area: nav;
-    } */
-    
-    /* ------ --- [My Personal Logo ] --- ----- */
+    /* ------ --- [My Personal Logo] --- ----- */
     /* ------------------------------ */
     li.logo{
       display: flex;
@@ -90,8 +77,6 @@ background-color: whitesmoke;
       height: 50%;
     }
 }
-
-
 
 /* MENU */
 .menu-wrap {
@@ -242,7 +227,7 @@ background-color: whitesmoke;
 
 
 
-/* Spooky Ghost */
+/* [+ Spooky Ghost +] */
 .ghost {
   cursor: grab;
   position: absolute;
@@ -340,26 +325,23 @@ background-color: whitesmoke;
   }
 
 
-
   .item{
     border: #ccc;
     border-radius: 1rem;
     padding: 3rem;
-    padding-left: 118px;
+    padding-left: 80px;
     font-size: 1.4rem;
     
   }
-  
   .item_1{
     background: #78bdb8;
     background-color: rgba(0, 0, 0, 0.9);
     grid-area: header;
     color: #ccc;
   }
-  
   .item_1 p{
     font-size: 4rem;
-  
+    
   }
   
   .item_2{
@@ -367,14 +349,21 @@ background-color: whitesmoke;
     grid-area: content;
     color: #ccc;
   }
+  .item_2 p{
+    margin-bottom: 0;
+    font-size: 1rem;
+  }
   .item_2 h2{
     font-size: 6rem;
-  
   }
+  /* .item_2 p{
+
+  } */
   .item_2 img{
     width: 100%;
     height: 30%;
   }
+
   .item_3{
     background: #9fcab7;
     grid-area: sidebar;
@@ -384,14 +373,28 @@ background-color: whitesmoke;
   }
   .item_3 h1{
     font-size: 4rem;
-    margin-top: 13rem;
+    margin-top: 9rem;
 
   }
   .item_3 p{
     font-size: 1.6rem;
     font-weight: none;
+    margin-top: 1rem;
   }
+  .item_3 p button{
+    margin-top: 13rem;
+    z-index: 90;
+  }
+
   .item_4{
     background: rgb(74,78,89);
     grid-area: footer;
+  }
+
+  div.this_img{
+    width: 100%;
+    border: solid black;
+    margin-bottom: 2rem;
+    margin-top: 2rem; 
+    position: relative;
   }
