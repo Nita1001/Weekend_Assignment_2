@@ -62,21 +62,37 @@ background-color: whitesmoke;
     'content content content sidebar'
     'footer footer footer footer';
   }
-    /* ------ --- [My Personal Logo] --- ----- */
-    /* ------------------------------ */
-    li.logo{
-      display: flex;
-      align-items: center;
-      justify-content: left;
-      font-size: 2.1875rem;
-      color: #fff;
-      z-index: 20;
-    }
-    li.logo img{
-      width: 50%;
-      height: 50%;
-    }
 }
+
+
+    /* ------ --- [My Personal Logo] --- ----- */
+  /* ------------------------------ */
+  li.logo{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-size: 2.1875rem;
+    color: #fff;
+    z-index: 20;
+  }
+  li.logo span img{
+    width: 50%;
+    height: 50%;
+  }
+    /* Just trying to do something cool. its not working tho [trying to add div or span].. */
+    li.logo span.logo-1{
+      position: relative;
+    }
+    li.logo span.logo-1::before{
+      content:'';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100px;
+      height: 100px;
+      border: solid pink;
+      z-index: 21;
+    }
 
 /* MENU */
 .menu-wrap {
@@ -208,7 +224,7 @@ background-color: whitesmoke;
 .menu-wrap .menu > div > div > ul > li {
   list-style: none;
   color: #fff;
-  font-size: 2rem;
+  font-size: 4rem;
   padding: 1rem;
 }
 
@@ -221,10 +237,6 @@ background-color: whitesmoke;
 .menu-wrap .menu > div > div > ul > li > a:hover {
   color: var(--secondary-color);
 }
-
-
-
-
 
 
 /* [+ Spooky Ghost +] */
@@ -398,3 +410,5 @@ background-color: whitesmoke;
     margin-top: 2rem; 
     position: relative;
   }
+
+
