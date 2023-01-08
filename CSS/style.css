@@ -371,8 +371,7 @@ background-color: whitesmoke;
     
   }
   .item_1{
-    background: #78bdb8;
-    background-color: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.9);
     grid-area: header;
     color: #ccc;
   }
@@ -424,8 +423,10 @@ background-color: whitesmoke;
   }
 
   .item_4{
-    background: rgb(74,78,89);
+    background: rgba(0, 0, 0, 0.9);
     grid-area: footer;
+    font-size: x-large;
+    color: white  !important;
   }
 
   div.this_img{
@@ -439,12 +440,16 @@ background-color: whitesmoke;
   div.this_div ul{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100px;
     margin-left: 0;
     padding-left: 0;
     position: relative;
+   
   } 
+  div.this_div ul li i{
+    color: white;
+  }
   
   /* div.this_div::after{
     content:'';
