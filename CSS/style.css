@@ -11,6 +11,7 @@
 :root {
   --primary-color: rgba(255, 255, 255, 0.75);
   --secondary-color: rgba(120, 189, 184, 1);
+  --third-color: rgb(243, 193, 233);
   --overlay-color: rgba(17, 17, 17, 0.85);
   --menu-speed: 0.75s;
 }
@@ -75,9 +76,12 @@ background-color: whitesmoke;
     color: #fff;
     z-index: 20;
   }
+  span{
+    width: 100%;
+  }
   li.logo span img{
-    width: 50%;
-    height: 50%;
+    width: 100%;
+    height: 100%;
   }
     /* Just trying to do something cool. its not working tho [trying to add div or span].. */
     li.logo span.logo-1{
@@ -86,22 +90,33 @@ background-color: whitesmoke;
     li.logo span.logo-1::before{
       content:'';
       position: absolute;
-      top: 2rem;
-      left: 4.3rem;
-      width: 1px;
-      height: 1px;
-      background-color: pink;
-      z-index: 21;
-    }
+      top: 3.88rem;
+      left: 3.6rem;
+      width: 3px;
+      height: 3px;
+      background-color: black;
+      z-index: 20;
+      animation: change-color 1s ease infinite;  
+      opacity: 0.5;    
+      border-radius: 10%;
+       }
     li.logo span.logo-1::after{
       content:'';
       position: absolute;
-      top: 2rem;
-      right: 4.4rem;
-      width: 1px;
-      height: 1px;
-      background-color: pink;
-      z-index: 21;
+      top: 3.88rem;
+      right: 3.9rem;
+      width: 3px;
+      height: 3px;
+      background-color: black;
+      z-index: 20;
+      animation: change-color 1s ease infinite;  
+      opacity: 0.3;    
+      border-radius: 10%;
+    }
+    @keyframes change-color{ 
+      to {
+        background-color: white;
+      }
     }
 
 /* Burger MENU */
@@ -245,7 +260,7 @@ background-color: whitesmoke;
 }
 
 .menu-wrap .menu > div > div > ul > li > a:hover {
-  color: var(--secondary-color);
+  color: var(--third-color);
 }
 
 
@@ -420,5 +435,25 @@ background-color: whitesmoke;
     margin-top: 2rem; 
     position: relative;
   }
+
+  div.this_div ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100px;
+    margin-left: 0;
+    padding-left: 0;
+    position: relative;
+  } 
+  
+  /* div.this_div::after{
+    content:'';
+    background: cyan;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100px; 
+  }  */
+
 
 
